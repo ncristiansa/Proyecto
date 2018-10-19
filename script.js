@@ -1,8 +1,10 @@
 function validacion(){
-  if(document.formulario.optcabello.value =="Selecciona..."){
-    alert("Selecciona una opcion.");
-  }else{
-    document.formulario.submit();
+  var correcto = true;
+  if(document.getElementById('OptCabello').value ==''){
+    correcto = false;
   }
-
-}
+  if(!correcto){
+  alert('Algunos campos no están correctos, vuelva a revisarlos');
+  }
+  return correcto;
+  }
