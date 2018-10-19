@@ -90,12 +90,12 @@
 
       $longC = count($namesC);
       $longGS = count($namesG);
-      echo"<form method='post'>";
+      echo"<form method='post' name='formulario'>";
       echo"<div class='general'>";
         echo"<div class='caja1'>";
         echo"<p>¿Color de pelo?</p>";
         for($i=0;$i<1;$i++){
-          echo"<select name='$names[$i]' id='$names[$i]'>";
+          echo"<select name='$names[$i]' id='OptCabello'>";
               echo"<option value='selecciona'>Selecciona...</option>";
             for($e=0;$e<$longC;$e++){
               echo"<option value='$namesC[$e]'>$namesC[$e]</option>";
@@ -106,7 +106,7 @@
         echo"<div class='caja2'>";
         echo"<p>¿Tiene gafas?</p>";
         for($i=0;$i<1;$i++){
-          echo"<select name='$names[$i]' id='OptCabello'>";
+          echo"<select name='$names[$i]' id='OptGafas'>";
               echo"<option value='selecciona'>Selecciona...</option>";
             for($e=0;$e<$longGS;$e++){
               echo"<option value='$namesG[$e]'>$namesG[$e]</option>";
@@ -117,7 +117,7 @@
         echo"<div class='caja3'>";
         echo"<p>¿Género?</p>";
           for($o=0;$o<1;$o++){
-            echo"<select name='$names[$i]' id='OptGafas'>";
+            echo"<select name='$names[$i]' id='OptSexo'>";
                 echo"<option value='selecciona'>Selecciona...</option>";
               for($i=0;$i<$longGS;$i++){
                 echo"<option value='$namesS[$i]'>$namesS[$i]</option>";

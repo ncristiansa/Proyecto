@@ -1,4 +1,8 @@
 function validacion(){
-  var opciones = document.getElementById("OptCabello");
+  if(document.formulario.optcabello.value =="Selecciona..."){
+    alert("Selecciona una opcion.");
+  }else{
+    document.formulario.submit();
+  }
 
 }
