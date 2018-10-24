@@ -82,55 +82,46 @@
         }
     }
     }
-      $names = array('OptCabello', 'OptGafas', 'OptSexo');
-      $namesC = array('Rubio', 'Moreno', 'Castany');
-      $namesG = array('Si', 'No');
-      $namesS = array('Hombre', 'Mujer');
-
-      $longC = count($namesC);
-      $longGS = count($namesG);
-      echo"<form method='post' name='formulario'>";
-      echo"<div class='general'>";
-        echo"<div class='caja1'>";
-        echo"<p>¿Color de pelo?</p>";
-        for($i=0;$i<1;$i++){
-          echo"<select name='$names[$i]' id='$names[$i]'>";
-              echo"<option value='selecciona'>Selecciona...</option>";
-            for($e=0;$e<$longC;$e++){
-              echo"<option value='$namesC[$e]'>$namesC[$e]</option>";
-            }
-          echo"</select>";
-        }
-        echo"</div>";
-        echo"<div class='caja2'>";
-        echo"<p>¿Tiene gafas?</p>";
-        for($i=0;$i<1;$i++){
-          echo"<select name='$names[$i]' id='$names[$i]'>";
-              echo"<option value='selecciona'>Selecciona...</option>";
-            for($e=0;$e<$longGS;$e++){
-              echo"<option value='$namesG[$e]'>$namesG[$e]</option>";
-            }
-          echo"</select>";
-        }
-        echo"</div>";
-        echo"<div class='caja3'>";
-        echo"<p>¿Género?</p>";
-          for($o=0;$o<1;$o++){
-            echo"<select name='$names[$i]' id='$names[$i]'>";
-                echo"<option value='selecciona'>Selecciona...</option>";
-              for($i=0;$i<$longGS;$i++){
-                echo"<option value='$namesS[$i]'>$namesS[$i]</option>";
+        $namesC = array('rubio', 'moreno', 'castany');
+        $namesG = array('si', 'no');
+        $namesS = array('hombre', 'mujer');
+        $longC = count($namesC);
+        $longGS = count($namesG);
+        echo"<form method='post' name='formulario'>";
+        echo"<div class='general'>";
+          echo"<div class='caja1'>";
+          echo"<p>¿Color de pelo?</p>";
+            echo"<select name='cabello' id='OptCabello'>";
+                echo"<option value='0'>--Selecciona--</option>";
+              for($e=0;$e<$longC;$e++){
+                echo"<option value='$namesC[$e]'>$namesC[$e]</option>";
               }
             echo"</select>";
-          }
+          echo"</div>";
+          echo"<div class='caja2'>";
+          echo"<p>¿Tiene gafas?</p>";
+            echo"<select name='gafas' id='OptGafas'>";
+                echo"<option value='0'>--Selecciona--</option>";
+              for($e=0;$e<$longGS;$e++){
+                echo"<option value='$namesG[$e]'>$namesG[$e]</option>";
+              }
+            echo"</select>";
+          echo"</div>";
+          echo"<div class='caja3'>";
+          echo"<p>¿Género?</p>";
+              echo"<select name='sexo' id='OptSexo'>";
+                  echo"<option value='0'>--Selecciona--</option>";
+                for($i=0;$i<$longGS;$i++){
+                  echo"<option value='$namesS[$i]'>$namesS[$i]</option>";
+                }
+              echo"</select>";
+          echo"</div>";
+          echo"<input type='button' name='pregunta' value='Haz la pregunta' onclick='validarPregunta()'>";
+          echo"</form>";
+          echo"<div class='mensajeError'>";
+          echo"<p id='mensajeError'></p>";
+          echo"</div>";
         echo"</div>";
-
-        echo"<input type='submit' value='Respuesta' onclick='validacion()'>";
-
-        echo"</form>";
-
-      echo"</div>";
-
     }
     ?>
   </body>
