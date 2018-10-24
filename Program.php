@@ -82,6 +82,41 @@
         }
     }
     }
+
+    #print_r($arrayGeneral[0][1]);
+    $DatosPersonajes = array();
+    $lgnl = count($arrayGeneral);
+    for($e=0;$e<$lgnl;$e++){
+        $prueba = explode(",", $arrayGeneral[$e][1]);
+        array_push($DatosPersonajes, $prueba);
+    }
+    #print_r($DatosPersonajes[0][1]); pelo
+    #print_r($DatosPersonajes[0][0]); gafas
+    #print_r($DatosPersonajes[0][2]); sexo
+
+    $AtributosCabello = array();
+    $AtributosGafas = array();
+    $AtributosSexo = array();
+    $logitudp = count($DatosPersonajes);
+    #Creando array AtributosCabello
+    for($c=0;$c<$logitudp;$c++){
+      $DatosC = explode(" ", $DatosPersonajes[$c][1]);
+      array_push($AtributosCabello, $DatosC);
+    }
+    #Creando array AtributosGafas
+    for($a=0;$a<$logitudp;$a++){
+      $DatosG = explode(" ", $DatosPersonajes[$a][0]);
+      array_push($AtributosGafas, $DatosG);
+    }
+    #Creando array AtributosSexo
+    for($s=0;$s<$logitudp;$s++){
+      $DatosS = explode(" ", $DatosPersonajes[$s][2]);
+      array_push($AtributosSexo, $DatosS);
+    }
+
+
+
+    echo"<br>";
         $namesC = array('rubio', 'moreno', 'castany');
         $namesG = array('si', 'no');
         $namesS = array('hombre', 'mujer');
